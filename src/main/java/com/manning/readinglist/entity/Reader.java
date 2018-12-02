@@ -15,9 +15,18 @@ public class Reader implements UserDetails {
     private static final long serialVersionUID = 1L;
 
     @Id
+    private String id;
     private String username;
     private String fullname;
     private String password;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public String getUsername() {

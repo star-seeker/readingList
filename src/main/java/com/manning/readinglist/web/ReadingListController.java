@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 import static org.apache.commons.lang3.StringUtils.join;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/reader")
 public class ReadingListController {
 
     @Resource
@@ -46,6 +47,7 @@ public class ReadingListController {
 
     }
 
+    @ApiIgnore
     @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
     public String readersBooks(@PathVariable("reader") String reader, Model model) {
         List<Book> readingList = readingListRepository.findByReader(reader);
@@ -57,6 +59,7 @@ public class ReadingListController {
         return "readingList";
     }
 
+    @ApiIgnore
     @RequestMapping(value = "/{reader}", method = RequestMethod.POST)
     public String addToReadingList(@PathVariable("reader") String reader, Book book) {
         book.setReader(reader);
