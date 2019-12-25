@@ -1,4 +1,4 @@
-package com.manning.corejava.generic;
+package com.manning.core_java.generic;
 
 import java.time.LocalDate;
 

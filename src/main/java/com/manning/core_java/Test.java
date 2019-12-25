@@ -1,4 +1,4 @@
-package com.manning.corejava;
+package com.manning.core_java;
 
 public class Test {
 

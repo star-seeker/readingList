@@ -1,4 +1,4 @@
-package com.manning.corejava.generic;
+package com.manning.core_java.generic;
 
 public class Pair<T> {
 
